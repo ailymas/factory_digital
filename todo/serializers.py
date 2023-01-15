@@ -8,6 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields=["email"]
 
 class TodoSerializer(serializers.ModelSerializer):
+    # created_by = serializers.ReadOnlyField(source='creator.email')
     class Meta:
         model=Todo
-        fields=["title","description","created_at"]
+        fields=["created_by","title","description","created_at"]
